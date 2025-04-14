@@ -40,7 +40,7 @@ func (b *bot) SendMessage(resp string) error {
 func (b *bot) hourTask() {
 	db := database.GetMysqlDb()
 	var tasks []task.Task
-	curTime := time.Now().AddDate(0, 0, 3)
+	curTime := time.Now().AddDate(0, 0, 3).Add(time.Minute)
 	nextTime := curTime.Add(time.Hour)
 	// 查询并删除任务
     err := db.Where("time >= ? AND time <= ?", curTime, nextTime).Find(&tasks).Error
