@@ -17,6 +17,7 @@ services:
       DB_LOG_LEVEL: silent
       WEBHOOK: ${WEBHOOK}
       GO_ENV: docker
+      GIN_MODE: release
       TZ: Asia/Shanghai
       
   mysql:
